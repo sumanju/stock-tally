@@ -1,0 +1,35 @@
+.navBar {
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+}
+
+.section {
+    padding: 15vh 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+    width: 20vw;
+}
+
+.text-field {
+    margin: 16px 0 !important;
+}
+
+img {
+    width: 40vw;
+}
+
+h2 {
+    color: #377dd1;
+}
+

@@ -1,0 +1,37 @@
+.header {
+    line-height: 1.7;
+    display: flex;
+    flex-direction: row;
+    padding: 0 12%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 10px 10px 10px #eee;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #377dd1;
+    font-weight: bolder;
+    font-family: cursive;
+}
+
+.action-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.action-list-item {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    color: #666666;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #377dd1;
+}
