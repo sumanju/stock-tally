@@ -3,21 +3,31 @@ import 	{ hot } from "react-hot-loader";
 import 	"./App.css";
 import	{	BrowserRouter as Router, 
 			Routes, 
-			Route 
+			Route,
+			Navigate
 		} from "react-router-dom";
 import LoginSignupComponent from "./login-signup-section/LoginSignupComponent";
+import Container from "./landing-page-sction/LandingPageComponent";
 
 function App() {
-  	return (
-    	<div className="container">
-			<Router>
-				<Routes>
-					<Route path="/login" element={<LoginSignupComponent isLogin={true}/>} />
-					<Route path="/register" element={<LoginSignupComponent isSignup={true}/>} />
-				</Routes>
-			</Router>
-    	</div>
-  	);
+	if (window.innerWidth > 1100) {
+		return (
+			<div className="container">
+				<Router>
+					<Routes>
+						<Route path="/" element={<Navigate replace="true" to="/login"/>} />
+						<Route path="/login" element={<LoginSignupComponent isLogin={true}/>} />
+						<Route path="/register" element={<LoginSignupComponent isSignup={true}/>} />
+						<Route path="/dashboard" element={<Container />} />
+					</Routes>
+				</Router>
+			</div>
+		  );
+	} else {
+		return (
+			<h1>incompatible device size</h1>
+		)
+	}
 }
 
 export default hot(module)(App);
