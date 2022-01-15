@@ -1,20 +1,22 @@
 import React from "react";
+import { HEADER_TYPE } from "../utils/AppType";
 import "./HeaderStyle.css";
 
 const HeaderComponent = (props) => {
+    const headerType = props.headerType
     return (
         <React.Fragment>
             <div className="header">
                 <div className="logo">
                     Stocks Tally
                 </div>
-                { props.isLogin || props.isSignup ?
+                { (headerType === HEADER_TYPE.REGISTER) || (headerType === HEADER_TYPE.LOGIN) ?
                     <div className="action">
                         <ul className="action-list">
-                            <li className={props.isLogin ? "action-list-item border-color" :  "action-list-item"}>
+                            <li className={headerType === HEADER_TYPE.LOGIN ? "action-list-item border-color" :  "action-list-item"}>
                                 <a href="/login">Login</a>
                             </li>
-                            <li className={ props.isSignup ? "action-list-item border-color" :  "action-list-item" }>
+                            <li className={ headerType === HEADER_TYPE.REGISTER ? "action-list-item border-color" :  "action-list-item" }>
                                 <a href="/register">Register</a>
                             </li>
                             <li className={ "action-list-item" }>
@@ -25,8 +27,11 @@ const HeaderComponent = (props) => {
                     :
                     <div className="action">
                         <ul className="action-list">
-                            <li className={props.isLogin ? "action-list-item border-color" :  "action-list-item"}>
+                            <li className={(headerType === HEADER_TYPE.DASHBOARD) ? "action-list-item border-color" :  "action-list-item"}>
                                 <a href="/dashboard">Dashboard</a>
+                            </li>
+                            <li className={(headerType === HEADER_TYPE.PL) ? "action-list-item border-color" :  "action-list-item"}>
+                                <a href="/PL">PL</a>
                             </li>
                         </ul>
                     </div>

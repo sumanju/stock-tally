@@ -5,6 +5,7 @@ import "./LoginSignupStyle.css";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import HeaderComponent from "../header-section/HeaderComponent";
+import { HEADER_TYPE } from '../utils/AppType'
 
 const formDefaultValue = {
     login : {
@@ -76,7 +77,7 @@ class LoginSignupComponent extends Component {
         if (this.props.isLogin) {
             return (
                 <React.Fragment>
-                    <HeaderComponent className="navBar" isLogin={true}/>
+                    <HeaderComponent className="navBar" headerType={HEADER_TYPE.LOGIN}/>
                     <div className="section">
                         <img src={logo} alt="default"/>
                         <div className="form-container">
@@ -114,7 +115,7 @@ class LoginSignupComponent extends Component {
         } else if (this.props.isSignup) {
             return (
                 <React.Fragment>
-                    <HeaderComponent className="navBar" isSignup={true}/>
+                    <HeaderComponent className="navBar" headerType={HEADER_TYPE.REGISTER}/>
                     <div className="section">
                         <img src={logo} alt="default"/>
                         <div className="form-container">

@@ -7,7 +7,7 @@ import	{	BrowserRouter as Router,
 			Navigate
 		} from "react-router-dom";
 import LoginSignupComponent from "./login-signup-section/LoginSignupComponent";
-import Container from "./landing-page-sction/LandingPageComponent";
+import LandingComponent from "./landing-page-sction/LandingPageComponent";
 
 function App() {
 	if (window.innerWidth > 1100) {
@@ -18,7 +18,8 @@ function App() {
 						<Route path="/" element={<Navigate replace="true" to="/login"/>} />
 						<Route path="/login" element={<LoginSignupComponent isLogin={true}/>} />
 						<Route path="/register" element={<LoginSignupComponent isSignup={true}/>} />
-						<Route path="/dashboard" element={<Container />} />
+						<Route path="/dashboard" element={<LandingComponent page={'dashboard'}/>} />
+						<Route path="/PL" element={<LandingComponent page={'PL'} />} />
 					</Routes>
 				</Router>
 			</div>
